@@ -48087,7 +48087,8 @@ var hours = [// '00',
 // '05',
 // '06',
 // '07',
-'08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22'];
+// '08',
+'09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
 var weekdays = [
 /* 'Sun',  */
 'Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon'];
@@ -48198,7 +48199,7 @@ var processData = function processData(valueArr, timestampArr) {
       if (templateTable[i][hour] == 0) {
         templateTable[i][hour] = null;
       } else {
-        templateTable[i][hour] = Math.round(templateTable[i][hour] / keepTrackWeek[i][hour]);
+        templateTable[i][hour] = Math.round(templateTable[i][hour] / keepTrackWeek[i][hour] * 100) / 100;
       }
     });
   };
