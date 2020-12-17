@@ -6,6 +6,7 @@ import { processData } from './utils/helpFunc';
 import { hours } from './config/constant';
 import Icon from './img/save_icon.svg';
 import useCsvDownloader from 'use-csv-downloader';
+import './style/main.css';
 
 interface Props extends PanelProps<PanelOptions> {}
 interface State {
@@ -75,7 +76,12 @@ export class MainPanel extends PureComponent<Props> {
           position: 'relative',
         }}
       >
-        <img src={Icon} onClick={this.handleDownload} style={{ position: 'absolute', top: 0, right: 2, zIndex: 2 }} />
+        <img
+          className="enhanced-btn"
+          src={Icon}
+          onClick={this.handleDownload}
+          style={{ position: 'absolute', top: 0, right: 2, zIndex: 2 }}
+        />
         <ResponsiveHeatMap
           data={data}
           keys={hours}

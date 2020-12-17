@@ -17,11 +17,10 @@ export const MainEditor: React.FC<PanelEditorProps<PanelOptions>> = ({ options, 
         <div className="section gf-form-group">
           <h5 className="section-heading">Set Filename</h5>
           <FormField
-            label="Center Latitude"
+            label="File Name"
             labelWidth={10}
             inputWidth={40}
-            type="number"
-            name="center_lat"
+            type="text"
             value={filename}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFilename(e.target.value)}
           />

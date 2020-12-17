@@ -1,0 +1,7 @@
+.enhanced-btn {
+  cursor: pointer;
+}
+
+.enhanced-btn.clicked {
+  transform: translateY(5px);
+}
