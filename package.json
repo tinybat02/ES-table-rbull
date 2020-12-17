@@ -12,13 +12,14 @@
   "license": "MIT",
   "devDependencies": {
     "@grafana/data": "next",
-    "@grafana/toolkit": "next",
+    "@grafana/toolkit": "^7.3.5",
     "@grafana/ui": "^7.2.2"
   },
   "dependencies": {
     "@nivo/core": "^0.63.0",
     "@nivo/heatmap": "^0.63.0",
     "date-fns": "^2.16.1",
-    "date-fns-tz": "^1.0.10"
+    "date-fns-tz": "^1.0.10",
+    "use-csv-downloader": "0.0.0"
   }
 }

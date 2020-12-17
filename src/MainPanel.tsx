@@ -4,6 +4,8 @@ import { PanelOptions, Frame, DayObj, CSVRow } from 'types';
 import { ResponsiveHeatMap } from '@nivo/heatmap';
 import { processData } from './utils/helpFunc';
 import { hours } from './config/constant';
+import Icon from './img/save_icon.svg';
+import useCsvDownloader from 'use-csv-downloader';
 
 interface Props extends PanelProps<PanelOptions> {}
 interface State {
@@ -29,8 +31,8 @@ export class MainPanel extends PureComponent<Props> {
     );
     const timestampArray = series[0].fields[1].values.buffer;
 
-    const { data } = processData(valueArray, timestampArray);
-    this.setState({ data });
+    const { data, csvData } = processData(valueArray, timestampArray);
+    this.setState({ data, csvData });
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -46,10 +48,16 @@ export class MainPanel extends PureComponent<Props> {
       );
       const timestampArray = series[0].fields[1].values.buffer;
 
-      const { data } = processData(valueArray, timestampArray);
-      this.setState({ data });
+      const { data, csvData } = processData(valueArray, timestampArray);
+      this.setState({ data, csvData });
     }
   }
+
+  handleDownload = () => {
+    const { filename } = this.props.options;
+    const downloadCsv = useCsvDownloader({ quote: '', delimiter: ';' });
+    downloadCsv(this.state.csvData, `${filename}.csv`);
+  };
 
   render() {
     const { width, height } = this.props;
@@ -67,6 +75,7 @@ export class MainPanel extends PureComponent<Props> {
           position: 'relative',
         }}
       >
+        <img src={Icon} onClick={this.handleDownload} style={{ position: 'absolute', top: 0, right: 2, zIndex: 2 }} />
         <ResponsiveHeatMap
           data={data}
           keys={hours}
