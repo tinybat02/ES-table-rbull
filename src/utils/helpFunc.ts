@@ -3,9 +3,8 @@ import { DayObj, DayOfWeek, CSVRow } from '../types';
 import toDate from 'date-fns/toDate';
 import { utcToZonedTime, format } from 'date-fns-tz';
 
-export const processData = (valueArr: number[], timestampArr: number[]) => {
+export const processData = (valueArr: number[], timestampArr: number[], timeZone: string) => {
   const keepTrackWeek: Array<{ [key: string]: number }> = [];
-  const timeZone = 'Europe/Berlin';
 
   const templateTable = weekdays.map(weekday => {
     const obj: DayObj = { date: weekday };

@@ -55762,14 +55762,23 @@ var MainEditor = function MainEditor(_a) {
   var options = _a.options,
       onOptionsChange = _a.onOptionsChange;
 
-  var _b = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])(Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(options.filename), 2),
-      filename = _b[0],
-      setFilename = _b[1];
+  var _b = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__read"])(Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(options), 2),
+      inputs = _b[0],
+      setInputs = _b[1];
+
+  var onChange = function onChange(e) {
+    var _a = e.target,
+        name = _a.name,
+        value = _a.value;
+    setInputs(function (prevState) {
+      var _a;
+
+      return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, prevState), (_a = {}, _a[name] = value, _a));
+    });
+  };
 
   var onSubmit = function onSubmit() {
-    onOptionsChange({
-      filename: filename
-    });
+    onOptionsChange(inputs);
   };
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_grafana_ui__WEBPACK_IMPORTED_MODULE_2__["PanelOptionsGroup"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -55783,10 +55792,17 @@ var MainEditor = function MainEditor(_a) {
     labelWidth: 10,
     inputWidth: 40,
     type: "text",
-    value: filename,
-    onChange: function onChange(e) {
-      return setFilename(e.target.value);
-    }
+    name: "filename",
+    value: inputs.filename,
+    onChange: onChange
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_grafana_ui__WEBPACK_IMPORTED_MODULE_2__["FormField"], {
+    label: "Timezone",
+    labelWidth: 10,
+    inputWidth: 40,
+    type: "text",
+    name: "timezone",
+    value: inputs.timezone,
+    onChange: onChange
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     className: "btn btn-primary",
     onClick: onSubmit
@@ -56112,7 +56128,8 @@ module.exports = exported;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaults", function() { return defaults; });
 var defaults = {
-  filename: ''
+  filename: '',
+  timezone: 'Europe/Berlin'
 };
 
 /***/ }),
