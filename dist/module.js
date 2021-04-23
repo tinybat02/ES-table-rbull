@@ -56040,7 +56040,7 @@ var hours = [// '00',
 // '08',
 // '09',
 '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
-var weekdays = ['Sun', 'Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon'];
+var weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 var mappingWeekToArrayIndex = {
   Mon: 0,
   Tue: 1,
