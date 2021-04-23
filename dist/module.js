@@ -56206,12 +56206,9 @@ var processData = function processData(valueArr, timestampArr, timeZone) {
   });
   templateTable.slice().reverse().map(function (weekday) {
     var day = weekday.date;
-
-    if (day != 'Sun') {
-      _config_constant__WEBPACK_IMPORTED_MODULE_1__["hours"].map(function (hour, idx) {
-        csvData[idx][day] = templateTable[_config_constant__WEBPACK_IMPORTED_MODULE_1__["mappingWeekToArrayIndex"][day]][hour] || 0;
-      });
-    }
+    _config_constant__WEBPACK_IMPORTED_MODULE_1__["hours"].map(function (hour, idx) {
+      csvData[idx][day] = templateTable[_config_constant__WEBPACK_IMPORTED_MODULE_1__["mappingWeekToArrayIndex"][day]][hour] || 0;
+    });
   });
   return {
     data: templateTable,

@@ -44,11 +44,9 @@ export const processData = (valueArr: number[], timestampArr: number[], timeZone
     .reverse()
     .map(weekday => {
       const day = weekday.date as DayOfWeek;
-      if (day != 'Sun') {
-        hours.map((hour, idx) => {
-          csvData[idx][day] = templateTable[mappingWeekToArrayIndex[day]][hour] || 0;
-        });
-      }
+      hours.map((hour, idx) => {
+        csvData[idx][day] = templateTable[mappingWeekToArrayIndex[day]][hour] || 0;
+      });
     });
 
   return { data: templateTable, csvData };
