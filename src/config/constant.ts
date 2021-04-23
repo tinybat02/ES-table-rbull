@@ -27,11 +27,11 @@ export const hours = [
 export const weekdays = ['Sun', 'Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon'];
 
 export const mappingWeekToArrayIndex = {
-  Sun: 0,
-  Sat: 1,
-  Fri: 2,
+  Mon: 0,
+  Tue: 1,
+  Wed: 2,
   Thu: 3,
-  Wed: 4,
-  Tue: 5,
-  Mon: 6,
+  Fri: 4,
+  Sat: 5,
+  Sun: 6,
 };

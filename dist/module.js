@@ -55880,8 +55880,9 @@ function (_super) {
       }, 0);
     });
     var timestampArray = series[0].fields[1].values.buffer;
+    var timezone = this.props.options.timezone;
 
-    var _a = Object(_utils_helpFunc__WEBPACK_IMPORTED_MODULE_3__["processData"])(valueArray, timestampArray),
+    var _a = Object(_utils_helpFunc__WEBPACK_IMPORTED_MODULE_3__["processData"])(valueArray, timestampArray, timezone),
         data = _a.data,
         csvData = _a.csvData;
 
@@ -55909,8 +55910,9 @@ function (_super) {
         }, 0);
       });
       var timestampArray = series_1[0].fields[1].values.buffer;
+      var timezone = this.props.options.timezone;
 
-      var _a = Object(_utils_helpFunc__WEBPACK_IMPORTED_MODULE_3__["processData"])(valueArray, timestampArray),
+      var _a = Object(_utils_helpFunc__WEBPACK_IMPORTED_MODULE_3__["processData"])(valueArray, timestampArray, timezone),
           data = _a.data,
           csvData = _a.csvData;
 
@@ -56040,13 +56042,13 @@ var hours = [// '00',
 '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
 var weekdays = ['Sun', 'Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon'];
 var mappingWeekToArrayIndex = {
-  Sun: 0,
-  Sat: 1,
-  Fri: 2,
+  Mon: 0,
+  Tue: 1,
+  Wed: 2,
   Thu: 3,
-  Wed: 4,
-  Tue: 5,
-  Mon: 6
+  Fri: 4,
+  Sat: 5,
+  Sun: 6
 };
 
 /***/ }),
@@ -56152,9 +56154,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var processData = function processData(valueArr, timestampArr) {
+var processData = function processData(valueArr, timestampArr, timeZone) {
   var keepTrackWeek = [];
-  var timeZone = 'Europe/Berlin';
   var templateTable = _config_constant__WEBPACK_IMPORTED_MODULE_1__["weekdays"].map(function (weekday) {
     var obj = {
       date: weekday
