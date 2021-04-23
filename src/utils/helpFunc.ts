@@ -22,13 +22,13 @@ export const processData = (valueArr: number[], timestampArr: number[]) => {
     const dayOfWeek = format(zonedDate, 'eee', { timeZone }) as DayOfWeek;
     const hour = format(zonedDate, 'HH', { timeZone });
 
-    if (dayOfWeek !== 'Sun' && hours.includes(hour)) {
+    if (hours.includes(hour)) {
       templateTable[mappingWeekToArrayIndex[dayOfWeek]][hour] += valueArr[idx];
       keepTrackWeek[mappingWeekToArrayIndex[dayOfWeek]][hour] += 1;
     }
   });
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     hours.map(hour => {
       if (templateTable[i][hour] == 0) {
         templateTable[i][hour] = null;

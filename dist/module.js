@@ -56020,18 +56020,17 @@ var hours = [// '00',
 // '06',
 // '07',
 // '08',
-'09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
-var weekdays = [
-/* 'Sun',  */
-'Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon'];
+// '09',
+'10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
+var weekdays = ['Sun', 'Sat', 'Fri', 'Thu', 'Wed', 'Tue', 'Mon'];
 var mappingWeekToArrayIndex = {
-  // Sun: 0,
-  Sat: 0,
-  Fri: 1,
-  Thu: 2,
-  Wed: 3,
-  Tue: 4,
-  Mon: 5
+  Sun: 0,
+  Sat: 1,
+  Fri: 2,
+  Thu: 3,
+  Wed: 4,
+  Tue: 5,
+  Mon: 6
 };
 
 /***/ }),
@@ -56162,7 +56161,7 @@ var processData = function processData(valueArr, timestampArr) {
       timeZone: timeZone
     });
 
-    if (dayOfWeek !== 'Sun' && _config_constant__WEBPACK_IMPORTED_MODULE_1__["hours"].includes(hour)) {
+    if (_config_constant__WEBPACK_IMPORTED_MODULE_1__["hours"].includes(hour)) {
       templateTable[_config_constant__WEBPACK_IMPORTED_MODULE_1__["mappingWeekToArrayIndex"][dayOfWeek]][hour] += valueArr[idx];
       keepTrackWeek[_config_constant__WEBPACK_IMPORTED_MODULE_1__["mappingWeekToArrayIndex"][dayOfWeek]][hour] += 1;
     }
@@ -56178,7 +56177,7 @@ var processData = function processData(valueArr, timestampArr) {
     });
   };
 
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 7; i++) {
     _loop_1(i);
   }
 
