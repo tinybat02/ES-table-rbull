@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" time="1.247">
-  <testsuite name="placeholder test" errors="0" failures="0" skipped="0" timestamp="2022-01-24T09:25:35" time="0.627" tests="1">
-    <testcase classname="placeholder test should return true" name="placeholder test should return true" time="0.002">
+<testsuites name="jest tests" tests="1" failures="0" time="1.274">
+  <testsuite name="placeholder test" errors="0" failures="0" skipped="0" timestamp="2022-01-24T09:28:50" time="0.65" tests="1">
+    <testcase classname="placeholder test should return true" name="placeholder test should return true" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
